@@ -1,0 +1,22 @@
+spring:
+  mvc:
+    format:
+      date: dd/MM/yyyy
+  datasource:
+    url: jdbc:mysql://localhost:3306/workout?serverTimezone=GMT%2B8&useSSL=false&&useUnicode=true&&CharacterEncoding=utf-8
+    username: root
+    password: 1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  jackson:
+    time-zone: GMT+8
+    date-format: com.fasterxml.jackson.databind.util.StdDateFormat
+    locale: zh_CN
