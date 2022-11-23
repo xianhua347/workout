@@ -1,5 +1,7 @@
 package com.example.workout.dto;
 
+import lombok.Builder;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -7,6 +9,7 @@ import java.util.Objects;
 /**
  * A DTO for the {@link com.example.workout.entity.Exercise} entity
  */
+
 public class ExerciseDto extends AbstractEntityDto implements Serializable {
     private  String name;
     private  Double duration;
