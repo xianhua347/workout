@@ -48,7 +48,7 @@ public class WorkOutController {
         return AjaxResult.success();
     }
 
-    @DeleteMapping("delall")
+    @DeleteMapping("/all")
     public AjaxResult delete(){
         workOutService.deleteAll();
         return AjaxResult.success();
