@@ -3,7 +3,6 @@ package com.example.workout.dto;
 import com.example.workout.entity.Event;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,6 +13,10 @@ public class EventDto extends AbstractEntityDto implements Serializable {
     private  Integer repetitions;
     private  Double duration;
     private  List<ExerciseDto> exercises;
+
+    public EventDto() {
+        super();
+    }
 
     public EventDto(Integer repetitions, Double duration, List<ExerciseDto> exercises) {
         this.repetitions = repetitions;

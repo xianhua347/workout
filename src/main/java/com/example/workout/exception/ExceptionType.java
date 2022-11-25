@@ -20,7 +20,9 @@ public enum ExceptionType {
 
     USER_NOT_FOUND(40401001,"用户名不存在"),
 
-    METHOD_NOT_SUPPORTED(405,"此请求不支持");
+    METHOD_NOT_SUPPORTED(405,"此请求不支持"),
+
+     UPDATE_ERROR(50001,"持久层更新错误");
 
     private Integer code;
 

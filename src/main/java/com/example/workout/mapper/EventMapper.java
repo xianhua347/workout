@@ -9,6 +9,8 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 @Component
 public interface EventMapper {
@@ -16,8 +18,9 @@ public interface EventMapper {
     @MappingIgnore
     Event eventDtoToEvent(EventDto eventDto);
 
+
     @MappingIgnore
-    EventDto eventToEventDto(Event event);
+    List<Event> eventListDtoToEvent(List<EventDto> eventDtos);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Event updateEventFromEventDto(EventDto eventDto, @MappingTarget Event event);

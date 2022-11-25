@@ -14,9 +14,6 @@ public interface WorkOutMapper {
     @MappingIgnore
     WorkOut workOutDtoToWorkOut(WorkOutDto workOutDto);
 
-    @MappingIgnore
-    WorkOutDto workOutToWorkOutDto(WorkOut workOut);
-
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     WorkOut updateWorkOutFromWorkOutDto(WorkOutDto workOutDto, @MappingTarget WorkOut workOut);
 }

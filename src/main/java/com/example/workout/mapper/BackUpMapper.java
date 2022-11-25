@@ -14,9 +14,6 @@ public interface BackUpMapper {
     @MappingIgnore
     BackUp backUpDtoToBackUp(BackUpDto backUpDto);
 
-    @MappingIgnore
-    BackUpDto backUpToBackUpDto(BackUp backUp);
-
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     BackUp updateBackUpFromBackUpDto(BackUpDto backUpDto, @MappingTarget BackUp backUp);
 }

@@ -1,9 +1,7 @@
 package com.example.workout.dto;
 
-import lombok.Builder;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -13,6 +11,10 @@ import java.util.Objects;
 public class ExerciseDto extends AbstractEntityDto implements Serializable {
     private  String name;
     private  Double duration;
+
+    public ExerciseDto(){
+        super();
+    }
 
     public ExerciseDto(String name, Double duration) {
         this.name = name;

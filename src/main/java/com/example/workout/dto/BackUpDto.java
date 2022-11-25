@@ -1,7 +1,7 @@
 package com.example.workout.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -10,6 +10,9 @@ import java.util.Objects;
  */
 public class BackUpDto extends AbstractEntityDto implements Serializable {
     private List<WorkOutDto> workOuts;
+
+    public BackUpDto(){
+    }
 
     public BackUpDto(List<WorkOutDto> workOuts) {
         this.workOuts = workOuts;

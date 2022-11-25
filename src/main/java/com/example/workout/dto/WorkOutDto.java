@@ -12,7 +12,9 @@ public class WorkOutDto extends AbstractEntityDto implements Serializable {
     private Double duration;
     private List<EventDto> events;
 
-
+    public WorkOutDto(){
+        super();
+    }
     public WorkOutDto(String title, Integer version, Integer position, Double duration, List<EventDto> events) {
         this.title = title;
         this.version = version;
