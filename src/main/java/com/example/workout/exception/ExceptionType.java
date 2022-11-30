@@ -22,7 +22,9 @@ public enum ExceptionType {
 
     METHOD_NOT_SUPPORTED(405,"此请求不支持"),
 
-     UPDATE_ERROR(50001,"持久层更新错误");
+     UPDATE_ERROR(50001,"持久层更新错误"),
+
+    PARAMETERS_CANNOT_BE_EMPTY(50002,"参数不能为空");
 
     private Integer code;
 

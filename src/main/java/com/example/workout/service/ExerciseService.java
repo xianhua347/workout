@@ -27,7 +27,7 @@ public class ExerciseService {
         if (exerciseDto != null) {
            return exerciseRepository.save(exerciseMapper.exerciseDtoToExercise(exerciseDto));
         }else {
-            throw new ClassNotFoundException("实体类不能为空！");
+            throw new ClassNotFoundException("查不到数据");
         }
     }
 
@@ -35,7 +35,7 @@ public class ExerciseService {
         if (exerciseDtos != null) {
             return exerciseRepository.saveAll(exerciseDtos);
         }else {
-            throw new NullPointerException("实体类不能为空！");
+            throw new NullPointerException("查不到数据");
         }
     }
 
@@ -53,15 +53,23 @@ public class ExerciseService {
         return true;
     }
 
-    public void delete(ExerciseDto exerciseDto) {
-        if (exerciseDto != null){
-            exerciseRepository.delete(exerciseMapper.exerciseDtoToExercise(exerciseDto));
+    public void delete(String id) {
+        if (!id.isEmpty()){
+            exerciseRepository.deleteById(id);
         }else {
-            throw new NullPointerException("实体类不能为空！");
+            throw new BizException(ExceptionType.PARAMETERS_CANNOT_BE_EMPTY);
         }
     }
 
     public Optional<Exercise> find(String id){
-        return exerciseRepository.findById(id);
+        if (!id.isEmpty()){
+            if (exerciseRepository.findById(id).isPresent()){
+                return exerciseRepository.findById(id);
+            }else {
+                throw new BizException(ExceptionType.NOT_FOUND);
+            }
+        }else{
+            throw new BizException(ExceptionType.PARAMETERS_CANNOT_BE_EMPTY);
+        }
     }
 }
